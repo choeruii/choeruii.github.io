@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://choeruii.github.io/tags/index.html</loc>
+    
+    <lastmod>2020-10-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://choeruii.github.io/categories/index.html</loc>
+    
+    <lastmod>2020-10-01</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://choeruii.github.io/2020/10/01/first-piece-of-blog/</loc>
     
     <lastmod>2020-10-01</lastmod>
