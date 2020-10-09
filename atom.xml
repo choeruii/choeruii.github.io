@@ -6,7 +6,7 @@
   <link href="https://choeruii.github.io/atom.xml" rel="self"/>
   
   <link href="https://choeruii.github.io/"/>
-  <updated>2020-10-09T15:13:22.267Z</updated>
+  <updated>2020-10-09T15:39:16.960Z</updated>
   <id>https://choeruii.github.io/</id>
   
   <author>
@@ -17,19 +17,19 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>人工智能基本概念</title>
+    <title>深度学习小白白入门乱记</title>
     <link href="https://choeruii.github.io/2020/10/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
     <id>https://choeruii.github.io/2020/10/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</id>
     <published>2020-10-09T15:00:24.148Z</published>
-    <updated>2020-10-09T15:13:22.267Z</updated>
+    <updated>2020-10-09T15:39:16.960Z</updated>
     
-    <content type="html"><![CDATA[<p>机器学习主要分为三类：监督学习、非监督学习、强化学习</p><h4 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h4><p>根据输出是连续还是离散的，把监督学习分为回归问题和分类问题。根据分类个数，还可分为两类分类问题或是多类分类问题。</p><p>监督学习本质上是一种知识的传递。</p><h4 id="非监督学习"><a href="#非监督学习" class="headerlink" title="非监督学习"></a>非监督学习</h4><p>非监督学习的训练数据只有输入而没有分类标签等输出。其目标是根据数据的分布发现数据的规律。例如当前比较热门的生成对抗网络<code>(GAN)</code>。</p><p>常见任务包括<strong>降维</strong>和<strong>聚类</strong>。</p><ul><li>降维的目的是把高维空间的点减低到一个低维空间上，同时尽可能的多保留信息。用途包括使可视化数据，<code>t-SNE</code>是一种很常见的用于可视化数据的降维技术。</li><li>聚类的目的是把相似的数据点放一起。由算法区分类别（标记）。</li></ul><h4 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h4><p>获取新知识的唯一途径。</p><h4 id="常见的监督学习模型"><a href="#常见的监督学习模型" class="headerlink" title="常见的监督学习模型"></a>常见的监督学习模型</h4><h5 id="1-朴素贝叶斯分类器（Naive-Bayes-Classifier）"><a href="#1-朴素贝叶斯分类器（Naive-Bayes-Classifier）" class="headerlink" title="1.朴素贝叶斯分类器（Naive Bayes Classifier）"></a>1.朴素贝叶斯分类器（Naive Bayes Classifier）</h5><p>朴素贝叶斯分类器<code>(Naive Bayes Classifier)</code>非常简单，其假设样本的特征在给定分类的条件下是相互独立的。</p><p>特征<code>(Feature)</code>是被观察现象的一个可以测量的属性。好的特征让学习变的容易，无关的特征会干扰模型。</p><p>假设输入<strong>X</strong> = $(x_1,x_2,…,x_n)$，NBC会计算给定<strong>X</strong>条件下分类是$C_k$的概率$P(C_k|x_1,x_2,…,x_n)$。通过贝叶斯公式，可以得到：</p><script type="math/tex; mode=display">P(C_k|X) =P(C_k|x_1,x_2,...,x_n)=\frac{P(x_1,x_2,...,x_n|C_k)}{P(X)}</script><p>根据条件独立假设，给定了类别$C_k$之后各个特征$x_i$和$x_j$是独立的，因此上式可写为：</p><script type="math/tex; mode=display">\frac{\prod_iP(x_i|C_k)P(C_k)}{P(X)}</script><p>给定<strong>X</strong>，分母$P(X)$是一个固定的用于归一化的常量。（概率加起来等于一）</p>]]></content>
+    <content type="html"><![CDATA[<p>机器学习主要分为三类：监督学习、非监督学习、强化学习</p><h3 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h3><p>根据输出是连续还是离散的，把监督学习分为回归问题和分类问题。根据分类个数，还可分为两类分类问题或是多类分类问题。</p><p>监督学习本质上是一种知识的传递。</p><h3 id="非监督学习"><a href="#非监督学习" class="headerlink" title="非监督学习"></a>非监督学习</h3><p>非监督学习的训练数据只有输入而没有分类标签等输出。其目标是根据数据的分布发现数据的规律。例如当前比较热门的生成对抗网络<code>(GAN)</code>。</p><p>常见任务包括<strong>降维</strong>和<strong>聚类</strong>。</p><ul><li>降维的目的是把高维空间的点减低到一个低维空间上，同时尽可能的多保留信息。用途包括使可视化数据，<code>t-SNE</code>是一种很常见的用于可视化数据的降维技术。</li><li>聚类的目的是把相似的数据点放一起。由算法区分类别（标记）。</li></ul><h3 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h3><p>获取新知识的唯一途径。（？？）</p><h3 id="常见的监督学习模型"><a href="#常见的监督学习模型" class="headerlink" title="常见的监督学习模型"></a>常见的监督学习模型</h3><h4 id="1-朴素贝叶斯分类器（Naive-Bayes-Classifier）"><a href="#1-朴素贝叶斯分类器（Naive-Bayes-Classifier）" class="headerlink" title="1.朴素贝叶斯分类器（Naive Bayes Classifier）"></a>1.朴素贝叶斯分类器（Naive Bayes Classifier）</h4><p>朴素贝叶斯分类器<code>(Naive Bayes Classifier)</code>非常简单，其假设样本的特征在给定分类的条件下是相互独立的。</p><p>特征<code>(Feature)</code>是被观察现象的一个可以测量的属性。好的特征让学习变的容易，无关的特征会干扰模型。</p><p>假设输入<strong>X</strong> = $(x_1,x_2,…,x_n)$，<code>NBC</code>会计算给定<strong>X</strong>条件下分类是$C_k$的概率$P(C_k|x_1,x_2,…,x_n)$。通过贝叶斯公式，可以得到：</p><script type="math/tex; mode=display">P(C_k|X) =P(C_k|x_1,x_2,...,x_n)=\frac{P(x_1,x_2,...,x_n|C_k)}{P(X)}</script><p>根据条件独立假设，给定了类别$C_k$之后各个特征$x_i$和$x_j$是独立的，因此上式可写为：</p><script type="math/tex; mode=display">\frac{\prod_iP(x_i|C_k)P(C_k)}{P(X)}</script><p>给定<strong>X</strong>，分母$P(X)$是一个固定的用于归一化的常量。（概率加起来等于一），可以忽略它。</p><p>在预测的时候只需知道$P(x_i|C_k)$和$P(C_k)$就可以计算出未归一化的$P(C_k|X)$，因此可以挑选概率最大的$k$作为预测的分类。</p><p>举例：用于垃圾邮件分类。</p><h4 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h4><p>二值分类问题，将线性输出域范围的$(-\infty,+\infty)$映射到$(0,1)$区间上。此处须提到重要的$Sigmoid$函数：</p><script type="math/tex; mode=display">\sigma(x) = \frac{1}{1 + e^{-x}} = \frac{e^x}{e^x+1}</script><p>$|x|\rightarrow 0$时，$\sigma(x)$近似线性函数$y = \frac{1}{4}x+\frac{1}{2}$。</p>]]></content>
     
     
       
       
     <summary type="html">&lt;p&gt;机器学习主要分为三类：监督学习、非监督学习、强化学习&lt;/p&gt;
-&lt;h4 id=&quot;监督学习&quot;&gt;&lt;a href=&quot;#监督学习&quot; class=&quot;headerlink&quot; title=&quot;监督学习&quot;&gt;&lt;/a&gt;监督学习&lt;/h4&gt;&lt;p&gt;根据输出是连续还是离散的，把监督学习分为回归问题和分类问</summary>
+&lt;h3 id=&quot;监督学习&quot;&gt;&lt;a href=&quot;#监督学习&quot; class=&quot;headerlink&quot; title=&quot;监督学习&quot;&gt;&lt;/a&gt;监督学习&lt;/h3&gt;&lt;p&gt;根据输出是连续还是离散的，把监督学习分为回归问题和分类问</summary>
       
     
     
