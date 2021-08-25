@@ -6,7 +6,7 @@
   <link href="https://choeruii.github.io/atom.xml" rel="self"/>
   
   <link href="https://choeruii.github.io/"/>
-  <updated>2021-01-25T09:31:14.678Z</updated>
+  <updated>2021-01-26T12:31:16.342Z</updated>
   <id>https://choeruii.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://choeruii.github.io/2021/01/26/%E5%B8%B8%E7%94%A8%E7%9A%84%E5%85%83%E8%83%9E%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
+    <id>https://choeruii.github.io/2021/01/26/%E5%B8%B8%E7%94%A8%E7%9A%84%E5%85%83%E8%83%9E%E8%87%AA%E5%8A%A8%E6%9C%BA/</id>
+    <published>2021-01-26T01:36:31.501Z</published>
+    <updated>2021-01-26T12:31:16.342Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>title:常用的元胞自动机<br>tags:”元胞自动机”</p><h2 id="mathjax-true"><a href="#mathjax-true" class="headerlink" title="mathjax:true"></a>mathjax:true</h2><p>​        在元胞自动机是由空间上各项同性的一系列元胞所组成，是在有限元胞自动机基础上发展起来的，用于模拟和分析几何空间内的各种现象。</p><h4 id="2-2-1-典型的元胞自动机"><a href="#2-2-1-典型的元胞自动机" class="headerlink" title="2.2.1 典型的元胞自动机"></a>2.2.1 典型的元胞自动机</h4><p>​        在元胞自动机的发展过程中，科学家们构造了各种各样的元胞自动机模型。其中，以下几个典型模型对元胞自动机的理论方法的研究起到了极大的推动作用，因此，它们又被认为是元胞自动机发展历程中的几个里程碑。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;title:常用的元胞自动机&lt;br&gt;tags:”元胞自动机”&lt;/p&gt;
+&lt;h2 id=&quot;mathjax-true&quot;&gt;&lt;a href=&quot;#mathjax-true&quot; class=&quot;headerlink&quot; title=&quot;mathjax:true&quot;&gt;&lt;/a&gt;mathjax</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>什么是元胞自动机</title>
