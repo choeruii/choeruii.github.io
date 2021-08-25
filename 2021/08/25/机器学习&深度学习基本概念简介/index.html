@@ -1,0 +1,272 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>机器学习/深度学习基本概念简介 | Stay Hungary, Stay Foolish</title><meta name="keywords" content="机器学习(李宏毅)学习笔记"><meta name="author" content="Eason Zhao"><meta name="copyright" content="Eason Zhao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="Lecture 1: 机器学习&#x2F;深度学习基本概念简介机器学习基本概念简介Machine Learning $\approx$ Looking for Function——机器学习就是让机器（程序）具备找一个函数的能力。 Different types of Funtions：  Regression（回归）——连续。最终得到标量（scalar） Classification（分类）——离散。得到一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习&#x2F;深度学习基本概念简介">
+<meta property="og:url" content="https://choeruii.github.io/2021/08/25/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0&%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%AE%80%E4%BB%8B/index.html">
+<meta property="og:site_name" content="Stay Hungary, Stay Foolish">
+<meta property="og:description" content="Lecture 1: 机器学习&#x2F;深度学习基本概念简介机器学习基本概念简介Machine Learning $\approx$ Looking for Function——机器学习就是让机器（程序）具备找一个函数的能力。 Different types of Funtions：  Regression（回归）——连续。最终得到标量（scalar） Classification（分类）——离散。得到一">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2021-08-25T04:32:56.345Z">
+<meta property="article:modified_time" content="2021-08-25T04:32:56.346Z">
+<meta property="article:author" content="Eason Zhao">
+<meta property="article:tag" content="机器学习(李宏毅)学习笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://choeruii.github.io/2021/08/25/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0&amp;%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%AE%80%E4%BB%8B/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="yandex-verification" content="{&quot;theme_color&quot;:{&quot;enable&quot;:true,&quot;main&quot;:&quot;#49B1F5&quot;,&quot;paginator&quot;:&quot;#00c4b6&quot;,&quot;button_hover&quot;:&quot;#FF7242&quot;,&quot;text_selection&quot;:&quot;#00c4b6&quot;,&quot;link_color&quot;:&quot;#99a9bf&quot;,&quot;meta_color&quot;:&quot;#858585&quot;,&quot;hr_color&quot;:&quot;#A4D8FA&quot;,&quot;code_foreground&quot;:&quot;#F47466&quot;,&quot;code_background&quot;:&quot;rgba(27, 31, 35, .05)&quot;,&quot;toc_color&quot;:&quot;#00c4b6&quot;,&quot;blockquote_padding_color&quot;:&quot;#49b1f5&quot;,&quot;blockquote_background_color&quot;:&quot;#49b1f5&quot;}}"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.2.0',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2021-08-25 12:32:56'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Stay Hungary, Stay Foolish" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/Avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">7</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/list/"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Lecture-1-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">Lecture 1: 机器学习&#x2F;深度学习基本概念简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">机器学习基本概念简介</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Function-with-Unknown-Parameters%EF%BC%9A"><span class="toc-number">1.1.1.</span> <span class="toc-text">Function with Unknown Parameters：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Define-Loss-from-Training-Data%EF%BC%9A"><span class="toc-number">1.1.2.</span> <span class="toc-text">Define Loss from Training Data：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Optimization"><span class="toc-number">1.1.3.</span> <span class="toc-text">Optimization</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%AE%80%E4%BB%8B"><span class="toc-number">1.2.</span> <span class="toc-text">深度学习基本概念简介</span></a></li></ol></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Stay Hungary, Stay Foolish</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/list/"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">机器学习/深度学习基本概念简介</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-08-25T04:32:56.345Z" title="Created 2021-08-25 12:32:56">2021-08-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-08-25T04:32:56.346Z" title="Updated 2021-08-25 12:32:56">2021-08-25</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>5min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h3 id="Lecture-1-机器学习-深度学习基本概念简介"><a href="#Lecture-1-机器学习-深度学习基本概念简介" class="headerlink" title="Lecture 1: 机器学习/深度学习基本概念简介"></a>Lecture 1: 机器学习/深度学习基本概念简介</h3><h4 id="机器学习基本概念简介"><a href="#机器学习基本概念简介" class="headerlink" title="机器学习基本概念简介"></a>机器学习基本概念简介</h4><p><em>Machine Learning $\approx$ Looking for Function</em>——机器学习就是让机器（程序）具备找一个函数的能力。</p>
+<p><em>Different types of Funtions：</em></p>
+<ul>
+<li>Regression（回归）——连续。最终得到标量（scalar）</li>
+<li><p>Classification（分类）——离散。得到一个选择（options/classes）</p>
+</li>
+<li><p>除此两大任务外，还有<strong>Structured Learning</strong>：让机器不仅学会分类或者实现预测任务，而且可以创造特定的“有结构”的物体，譬如文章、图像等。</p>
+</li>
+</ul>
+<p><em>机器学习如何找到这个函数？（三个步骤）</em></p>
+<ul>
+<li><h5 id="Function-with-Unknown-Parameters："><a href="#Function-with-Unknown-Parameters：" class="headerlink" title="Function with Unknown Parameters："></a>Function with Unknown Parameters：</h5><p>譬如$y = b + wx_1$，该假设方程是基于<strong>domain knowledge</strong>（领域知识）各种定义：</p>
+<ul>
+<li><strong>Model</strong>：带有未知的参数(Parameters)的函数（function）。</li>
+<li>$x_1$是<strong>feature</strong>，$w$是<strong>weight</strong>，$b$是<strong>bias</strong>，后两个未知参数基于数据(data)学习得到。</li>
+</ul>
+</li>
+<li><h5 id="Define-Loss-from-Training-Data："><a href="#Define-Loss-from-Training-Data：" class="headerlink" title="Define Loss from Training Data："></a>Define Loss from Training Data：</h5><ul>
+<li>Loss，即损失函数，一个仅带有函数未知的参数的方程，记作$L(b,w)$</li>
+<li>Loss的值体现了函数的一组参数的设定的优劣</li>
+<li>通过训练资料来计算loss = |估测值 - 真正值|，<strong>Label</strong>指的就是正确的数值$\hat{y}$，$e_i = |y - \hat{y}|,i = 1,2,..,n$，所以。<strong>Loss</strong>：$L = \Large\frac{1}{N}\sum_n^{i=1}e_i$。其中，差值$e$的有不同的计算方法，如上采用直接做差得绝对值（Mean Absolute Error：MAE），还有$e = (y-\hat{y})^2$，即Mean Square Error：MSE。选择哪一种方法衡量$e$取决于我们的需求以及对于task的理解。</li>
+<li>我们枚举不同参数组合（$w,b$）通过计算Loss值画出等高线图：<strong>Error Surface</strong></li>
+<li>如果$y$和$\hat{y}$都是概率==&gt;<strong>Cross-entropy</strong>：交叉熵</li>
+<li>loss函数自定义设定，如果有必要的话，loss函数可以output负值</li>
+</ul>
+</li>
+<li><h5 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h5><ul>
+<li><p>$w^<em>,b^</em> = arg\space \underset{w,b}{min}L $</p>
+</li>
+<li><p>为了实现上述任务（找到$w,b$使得$L$最小）,通常采用梯度下降法（<strong>Gradient Descent</strong>）。譬如：隐去其中一个参数<img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210824114633124.png" alt="image-20210824114633124" style="zoom:50%;" />从而得到一个$w-Loss(L)$的数值曲线，记作$L(w)$</p>
+<ul>
+<li><p><strong>随机</strong>选取一个初始值：$w_0$</p>
+</li>
+<li><p>计算：$\Large \frac{\part L}{\part w}|_{w=w_0}$，该点位置在Error Surface的切线斜率：若负值（Negative），左高右低=&gt;$w$右移$\eta$使得$Loss$变小；若正值（Positive），左底右高=&gt;$w$左移$\eta$使得$Loss$变小。斜率大=&gt;步伐$\eta$跨大一些；斜率小=&gt;步伐$\eta$跨小一些。$w_1 \leftarrow w_0 - \eta \large \frac{\part L}{\part w}|_{w=w_0}$</p>
+<p><strong>$\eta$</strong> : learning rate学习率，属于<strong>hyper parameters</strong>：超参数，自己设定，决定更新速率。</p>
+</li>
+<li><p>不断迭代更换$w$</p>
+<p><strong>“假”问题</strong>：囿于局部最优解local minimal，忽略了实际的最优解global minima（不过并非梯度下降法的真正痛点）</p>
+</li>
+</ul>
+</li>
+<li><p>类似的，将单参数随机梯度下降法推广到两参数上：$w^<em>,b^</em> = arg\space \underset{w,b}{min}L $</p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210824153357084.png" alt="image-20210824153357084" style="zoom:67%;" /></p>
+<p>确定<strong>更新方向：$(- \eta \large \frac{\part L}{\part w},- \eta \large \frac{\part L}{\part b})$</strong>，$\eta$为学习率</p>
+<p>总结来说，基本步骤如下</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210824153852773.png" alt="image-20210824153852773" style="zoom:67%;" /></p>
+<p>以上三步是机器学习最为基本的框架。基于此，还需要理解任务，摸索数据变化规律==&gt;修改模型（model）</p>
+<hr>
+<p>机器学习可以认为是深度学习的超集，后者是前者在多层网</p>
+<h4 id="深度学习基本概念简介"><a href="#深度学习基本概念简介" class="headerlink" title="深度学习基本概念简介"></a>深度学习基本概念简介</h4><p>线性模型（Linear Model）过于简单，无论参数组合如何可能总是无法完全拟合任务的Model，这里说明Linear Model具有<em>severe limitation</em>，这种局限被称之为<strong>Model Bias</strong>。于是我们需要更为复杂的函数。</p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210824183803053.png" alt="image-20210824183803053" style="zoom:80%;" /></p>
+<p>这里类似于使用<strong>阶跃函数</strong>的组合来表示分段函数，<font color ='red'>red curve</font>= 1 + 2 + 3  + 0（常数项）,这里归纳出一个常见的结论：分段函数$All\space Piecewise\space Linear\space Curves = constant$(常数项) + <img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210824184212031.png" alt="image-20210824184212031" style="zoom: 67%;" /></p>
+<p>那么，对于$Beyond\space Piecewise\space Linear\space Curves$（这也是我们常见的一般函数的曲线），我们使用许多多不一样的小线段去“逼近”连续的这条曲线：</p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210824184452998.png" alt="image-20210824184452998" style="zoom:67%;" /></p>
+<p>为了表示这样一个蓝色的函数（小线段）<img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210824185111847.png" alt="image-20210824185111847" style="zoom:50%;" />（被称之<strong>Hard Sigmoid</strong>），这里用一个常见的指数函数来逼近——<strong>Sigmoid Function</strong></p>
+<script type="math/tex; mode=display">
+y = c \large \frac{1}{1 + e^{-(b+wx_1)}}= c·sigmoid(b+wx_1)</script><p>通过调整$w,b,c$，一组参数组合可以得到不同逼近的小线段👇</p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210824185136913.png" alt="image-20210824185136913" style="zoom:80%;" /></p>
+<p>这个引入超级棒！！由上易知，一个连续的复杂的函数曲线可以被分解成许多离散的小线段（<strong>Hard Sigmoid</strong>）和一个常数项的线性相加，然后每个小线段被一个三参数的<strong>Sigmoid Function</strong>所逼近。下图的函数曲线可以表示为一个含有10个未知参数的mode：</p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210824190018310.png" alt="image-20210824190018310" style="zoom:80%;" /></p>
+<p>从而，可以产生一个从简单-&gt;复杂、单一-&gt;多元的函数模式。新的模型包含更多的特征。</p>
+<script type="math/tex; mode=display">
+y=b+wx_1    \Rightarrow y = b + \underset{i}{\sum}c_i sigmoid(b_i+w_ix_1)</script><p>由（2）式，考虑到多特征因素，进一步扩展得</p>
+<script type="math/tex; mode=display">
+y = b + \underset{j}{\sum}w_jx_j \Rightarrow y = b + \underset{i}{\sum}c_i sigmoid(b_i+\underset{j}{\sum}w_{ij}x_1)</script><p>其中$i$表示$i^{th}$个$Sigmoid$函数（模型的基函数个数），$x_j$表示一个函数中不同的特征或者预测的数据长度，，$w_j$表示对应特征权值。</p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210824230821610.png" alt="image-20210824230821610" style="zoom:67%;" /></p>
+<p>总结：在通用的机器学习教程中，$sigmoid$函数普遍被视作一款常见的激活函数，在本课程中，从代表任务模型的非线性函数出发—&gt;极限：分段的线性函数组合—&gt;不同性质/特征的$sigmoid$函数逼近小分割的线性函数。如上图所示，我们有三个激活函数（$sigmoid \space function$）以及输出的一个方程组（矩阵/向量相乘表示），这里基本上可以视为一个具有三个神经元的全连接的一层神经网络。</p>
+<script type="math/tex; mode=display">
+[r_1,r_2,r_3]^T = [b_1,b_2,b_3]^T + \begin{bmatrix}w_{11},w_{12},w_{13}\\w_{21},w_{22},w_{23}\\w_{31},w_{32},w_{33} \end{bmatrix}·[x_1,x_2,x_3]^T</script><p>总之，</p>
+<script type="math/tex; mode=display">
+r = \mathbb {b} +w·x</script><p>接下来，将该方程组$r$通过激活函数输出向量$a$，这里</p>
+<script type="math/tex; mode=display">
+a = \sigma(r)</script><p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210824233230068.png" alt="image-20210824233230068" style="zoom:80%;" /></p>
+<p>由(5)、(6)得</p>
+<script type="math/tex; mode=display">
+\space由 a= \sigma(\mathbb{b} + w·x)
+\\\Rightarrow y =  b + [c_1,c_2,c_3]·\sigma(\mathbb{b} + w·x)</script><p>注意，$\sigma$中的$\mathbb{b}$是向量，外面的$b$是数值，结果$y$也是数值（标量）。</p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Eason Zhao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://choeruii.github.io/2021/08/25/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0&amp;%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%AE%80%E4%BB%8B/">https://choeruii.github.io/2021/08/25/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0&amp;%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%AE%80%E4%BB%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%9D%8E%E5%AE%8F%E6%AF%85-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">机器学习(李宏毅)学习笔记</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/01/26/%E5%B8%B8%E7%94%A8%E7%9A%84%E5%85%83%E8%83%9E%E8%87%AA%E5%8A%A8%E6%9C%BA/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info"></div></div></a></div></nav></article></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Eason Zhao</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    loader: {
+      source: {
+        '[tex]/amsCd': '[tex]/amscd'
+      }
+    },
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        addClass: [200,() => {
+          document.querySelectorAll('mjx-container:not([display=\'true\']').forEach( node => {
+            const target = node.parentNode
+            if (!target.classList.contains('has-jax')) {
+              target.classList.add('mathjax-overflow')
+            }
+          })
+        }, '', false]
+      }
+    }
+  }
+  
+  var script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script></div></body></html>
